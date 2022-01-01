@@ -1,4 +1,4 @@
 const config = {
-    TOKEN: ""
+    TOKEN: "" //Write your discord bot token.
 }
 module.exports = config
