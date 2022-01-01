@@ -13,6 +13,8 @@ client.login(config.TOKEN)
 
 client.on("ready", async () => {
 console.log("Im Login!")
+    
+ //bot presence
 client.user.setActivity("Hello World!")
 })
 
