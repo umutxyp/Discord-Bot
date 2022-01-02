@@ -1,6 +1,7 @@
 # Discord-Bot
 You can use the discord bot codes that are updated in every video of the codes I use in the discord bot making series that I have published on my youtube channel.
 <hr>
+Video: https://youtu.be/CRslkcW6ykU <br>
 Download NodeJS V17: https://nodejs.org/ <br>
 Download Visual Studio Code: https://code.visualstudio.com/download <br>
 Discord Developers: https://discord.dev/ <br>
