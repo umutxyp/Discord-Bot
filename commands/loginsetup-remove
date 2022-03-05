@@ -1,0 +1,32 @@
+const Discord = require('discord.js');
+const db = require("orio.db")
+
+module.exports.run = async (client, message, args) => {
+
+if(!message.member.permissions.has("MANAGE_GUILD")) return message.reply({ content: "You do not have permission to use this command." });
+
+const guild = message.guild;
+const data = db.get(`${guild.id}.logs`);
+if(!data) return message.reply({ content: "Please set a logging channel first." });
+
+await db.delete(`${guild.id}.logs`);
+return message.reply({ content: "Logging channel removed." });
+
+//embed example
+// const embed = new Discord.MessageEmbed()
+// .setTitle("Title")
+// .setDescription("Description")
+// .setColor("BLUE")
+// .setTimestamp();
+// message.channel.send({ embeds: [embed] });
+
+
+}
+
+module.exports.help = {
+    name: "loginsetupremove"
+}
+
+module.exports.conf = {
+    aliases: ["login-setup-remove"]
+}
