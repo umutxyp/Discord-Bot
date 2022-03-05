@@ -4,7 +4,10 @@ const {
   MessageEmbed,
   Collection,
   Message,
+  WebhookClient
 } = require("discord.js");
+
+const db = require("orio.db")
 
 const client = new Client({
   intents: [
@@ -57,41 +60,42 @@ client.on("ready", async () => {
   client.user.setActivity("Hello World!");
 });
 
-//test command
-client.on("messageCreate", async (msg) => {
-  if (msg.guild) {
-    if (!msg.author.bot) {
-      if (msg.content.includes("!test")) {
-        msg.reply({ content: "Test message." });
-      }
-    }
-  }
-});
 
-//ping command
-client.on("messageCreate", async (msg) => {
-  if (msg.guild) {
-    if (!msg.author.bot) {
-      if (msg.content.includes("!ping")) {
-        msg.reply({ content: "My Ping: " + client.ws.ping });
-      }
-    }
-  }
-});
 
-//embed message
-client.on("messageCreate", async (msg) => {
-  if (msg.guild) {
-    if (!msg.author.bot) {
-      if (msg.content.includes("!embed")) {
-        const embed = new MessageEmbed()
-          .setTitle("Embed Title")
-          .setColor("BLUE")
-          .setDescription("test message..")
-          .setThumbnail(client.user.displayAvatarURL())
-          .setTimestamp();
-        msg.channel.send({ embeds: [embed] });
-      }
-    }
-  }
-});
+client.on("guildMemberAdd", async member => {
+const guild = member.guild;
+const data = db.get(`${guild.id}.logs`);
+if(!data) return;
+
+const channel = guild.channels.cache.get(data);
+if(!channel) return;
+
+const embed = new MessageEmbed()
+.setTitle("Member Joined")
+.setColor("GREEN")
+.setThumbnail(member.user.displayAvatarURL())
+.setDescription(`${member.user.tag} has joined the server.`)
+.setTimestamp();
+channel.send({ embeds: [embed] });
+
+
+})
+
+
+client.on("guildMemberRemove", async member => {
+const guild = member.guild;
+const data = db.get(`${guild.id}.logs`);
+if(!data) return;
+
+const channel = guild.channels.cache.get(data);
+if(!channel) return;
+
+const embed = new MessageEmbed()
+.setTitle("Member Left")
+.setColor("RED")
+.setThumbnail(member.user.displayAvatarURL())
+.setDescription(`${member.user.tag} has left the server.`)
+.setTimestamp();
+channel.send({ embeds: [embed] });
+
+})
