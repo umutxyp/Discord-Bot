@@ -6,7 +6,7 @@ Download NodeJS V17: https://nodejs.org/ <br>
 Download Visual Studio Code: https://code.visualstudio.com/download <br>
 Discord Developers: https://discord.dev/ <br>
 Discord.js Guide: https://discord.js.org/ <br>
-Join My Discord: https://discord.gg/Vpqu746haB
+Join My Discord: https://discord.gg/Fy4WmSThRZ
 <hr><br>
 It is an example discord bot project that currently supports discord.js v13 and is constantly updated. My project that I use in the discord bot making tutorials I give on my youtube channel.
 
