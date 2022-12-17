@@ -11,7 +11,7 @@ It is an example discord bot project that currently supports discord.js v13 and 
 
 <h3>⚠️ WARNING ⚠️</h3>
 Don't forget to write your discord bot token in the file name config.js!
-
+<hr>
 Follow Me Social Media<br>
 Twitch Yayınları: https://twitch.com/umutxyp<br>
 Github: https://github.com/umutxyp<br>
