@@ -97,5 +97,6 @@ It’s **simple, effective, and a little cheeky**. After all, who doesn’t like
 
 - **GitHub Repository:** [Network Control - DNS Proxy Deceptive](https://github.com/umutxyp/Network-Control-DNS-Proxy-Deceptive)
 - **Download App:** [Google Drive Link](https://drive.google.com/file/d/1HGKw-FkzMgH_peY4jyV7eRmdOt5pE7Pb/view?usp=drive_link)
+- **Code Share:** [Powered By Code Share](https://codeshare.me)
 
 Feel free to reach out for any questions or feedback. Let’s make the internet a freer place for everyone! 🌐✨
